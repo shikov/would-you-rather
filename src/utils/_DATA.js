@@ -2,7 +2,7 @@ let users = {
   kaya: {
     id: 'kaya',
     name: 'Kaya Pryor',
-    avatarURL: "./avatars/Kaya Pryor.jpg",
+    avatarURL: "/avatars/Kaya Pryor.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   athan: {
     id: 'athan',
     name: 'Athan Travis',
-    avatarURL: "./avatars/Athan Travis.jpg",
+    avatarURL: "/avatars/Athan Travis.jpg",
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   edith: {
     id: 'edith',
     name: 'Edith Koenig',
-    avatarURL: "./avatars/Edith Koenig.jpg",
+    avatarURL: "/avatars/Edith Koenig.jpg",
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

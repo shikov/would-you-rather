@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getUsers } from './actions/users'
 import LoadingBar from 'react-redux-loading'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
+import Nav from './components/Nav'
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,13 +18,22 @@ class App extends React.Component {
       <div>
         <LoadingBar />
         {loadingBar.default === 0
-          ? (
-            <BrowserRouter>
-              <Route exact to="/">
-                {auth.loggedIn ? <Home /> : <Login />}
-              </Route>
-            </BrowserRouter>
-          )
+          ? auth.loggedIn
+            ? (
+              <div>
+                <BrowserRouter>
+                  <Nav />
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/leaderboard">Leaderboard</Route>
+                    <Route exact path="/add">Add new question</Route>
+                    <Route exact path="/questions/:question_id">question</Route>
+                    <Route>Page not found!</Route>
+                  </Switch>
+                </BrowserRouter>
+              </div>
+            )
+            : <Login />
           : null
         }
       </div>

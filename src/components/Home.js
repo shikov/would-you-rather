@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class Home extends Component {
+class Home extends React.Component {
   render() {
     return (
-      <div>
-        Game
-      </div>
+      <div>Home</div>
     )
   }
 }
