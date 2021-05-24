@@ -2,35 +2,33 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { logOut } from '../actions/auth'
 import { connect } from 'react-redux'
-
+import { AppBar, Avatar, Button, Toolbar } from '@material-ui/core'
 
 class Nav extends React.Component {
   render() {
     const { auth, users } = this.props
 
     return (
-      <nav className='nav'>
-        <ul>
-          <li>
-            <NavLink to='/' exact activeClassName='active'>
-              Home
-          </NavLink>
-          </li>
-          <li>
-            <NavLink to='/leaderboard' activeClassName='active'>
-              Leaderboard
-          </NavLink>
-          </li>
-          <li>
-            <NavLink to='/add' activeClassName='active'>
-              Add new question
-          </NavLink>
-          </li>
-          <img width="32" height="32" src={users[auth.userID].avatarURL} alt={auth.userID} />
-          <span>{users[auth.userID].name}</span>
-          <button onClick={() => this.props.dispatch(logOut())}>Log out</button>
-        </ul>
-      </nav>
+      <div style={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <div style={{ flexGrow: 1 }}>
+              <NavLink className="navLink" to='/' exact activeClassName='active'>
+                Home
+              </NavLink>
+              <NavLink className="navLink" to='/leaderboard' activeClassName='active'>
+                Leaderboard
+              </NavLink>
+              <NavLink className="navLink" to='/add' activeClassName='active'>
+                Add new question
+              </NavLink>
+            </div>
+            <div>{users[auth.userID].name}</div>
+            <Avatar style={{ margin: "0px 10px" }} alt={users[auth.userID].name} src={users[auth.userID].avatarURL} />
+            <Button variant="contained" size="small" onClick={() => this.props.dispatch(logOut())}>Logout</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
     )
   }
 }
