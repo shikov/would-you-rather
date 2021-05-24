@@ -2,6 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getUsers } from './actions/users'
 import LoadingBar from 'react-redux-loading'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Login from './components/Login'
+import Home from './components/Home'
 
 class App extends React.Component {
   componentDidMount() {
@@ -9,27 +12,27 @@ class App extends React.Component {
   }
 
   render() {
-    const { auth, users } = this.props
+    const { auth, loadingBar } = this.props
     return (
       <div>
         <LoadingBar />
-        {
-          auth.loggedIn
-            ? <h1>{auth.userID}</h1>
-            : (
-              <div>
-                <h1>Log In</h1>
-                <ul>{Object.values(users).map(user => <li key={user.id}>{user.name}</li>)}</ul>
-              </div>
-            )
+        {loadingBar.default === 0
+          ? (
+            <BrowserRouter>
+              <Route exact to="/">
+                {auth.loggedIn ? <Home /> : <Login />}
+              </Route>
+            </BrowserRouter>
+          )
+          : null
         }
       </div>
     )
   }
 }
 
-function mapStateToProps({ auth, users }) {
-  return { auth, users }
+function mapStateToProps({ auth, loadingBar }) {
+  return { auth, loadingBar }
 }
 
 export default connect(mapStateToProps)(App)
