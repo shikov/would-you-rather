@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setAutherUser } from '../actions/auth'
+import { setAuthedUser } from '../actions/auth'
+import { getQuestions } from '../actions/questions'
 
 class Login extends Component {
   state = { userID: Object.values(this.props.users)[0].id }
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.dispatch(setAutherUser(this.state.userID))
+    this.props.dispatch(setAuthedUser(this.state.userID))
+    this.props.dispatch(getQuestions())
   }
 
   render() {
