@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function VoteCard(props) {
   return (
-    <Card style={{ margin: '20px auto' }} elevation={5}>
+    <Card style={{ margin: '20px auto', backgroundColor: props.selected ? 'aquamarine' : 'none' }} elevation={5}>
       <CardContent>
         <h5>Would you rather {props.text}?</h5>
         <div style={{ display: 'table' }}>
