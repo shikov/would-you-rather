@@ -1,4 +1,4 @@
-import { RECEIVE_ANSWER, RECEIVE_QUESTIONS } from '../actions/questions'
+import { RECEIVE_ANSWER, RECEIVE_QUESTION, RECEIVE_QUESTIONS } from '../actions/questions'
 import { LOG_OUT } from '../actions/auth'
 
 export default function questions(state = {}, action) {
@@ -15,6 +15,11 @@ export default function questions(state = {}, action) {
             votes: state[action.question.qid][action.question.answer].votes.concat([action.question.authedUser])
           }
         }
+      }
+    case RECEIVE_QUESTION:
+      return {
+        ...state,
+        [action.question.id]: action.question
       }
     case LOG_OUT:
       return {}
