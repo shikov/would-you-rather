@@ -1,6 +1,6 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardHeader, Grid } from '@material-ui/core'
 import React from 'react'
 import { connect } from 'react-redux'
+import AnsweredQuestion from './AnsweredQuestion'
 import UnAnsweredQuestion from './UnAnsweredQuestion'
 
 class Question extends React.Component {
@@ -14,18 +14,14 @@ class Question extends React.Component {
     }
     // const qAuthor = users[question.author]
     const answered = users[auth.userID].answers[qID] !== undefined
-    if (answered) {
-      return (
-        <div>
-
-        </div>
-      )
-    }
-    else {
-      return (
-        <UnAnsweredQuestion question={question} />
-      )
-    }
+    return (
+      <div>
+        {answered
+          ? <AnsweredQuestion question={question} />
+          : <UnAnsweredQuestion question={question} />
+        }
+      </div>
+    )
   }
 }
 
