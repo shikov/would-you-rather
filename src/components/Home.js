@@ -29,7 +29,7 @@ class Home extends React.Component {
         </Paper>
         <div hidden={this.state.selectedTab !== 0}>
           <Grid container>
-            {Object.values(unAnsweredQuestions).map(q =>
+            {Object.values(unAnsweredQuestions).sort((q1, q2) => q2.timestamp - q1.timestamp).map(q =>
               <QuestionCard
                 key={q.id}
                 question={q}
@@ -41,7 +41,7 @@ class Home extends React.Component {
         </div>
         <div hidden={this.state.selectedTab !== 1}>
           <Grid container>
-            {Object.values(answeredQuestions).map(q =>
+            {Object.values(answeredQuestions).sort((q1, q2) => q2.timestamp - q1.timestamp).map(q =>
               <QuestionCard
                 key={q.id}
                 question={q}
