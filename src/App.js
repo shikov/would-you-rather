@@ -9,6 +9,7 @@ import Nav from './components/Nav'
 import './App.css'
 import Question from './components/Question'
 import AddQuestion from './components/AddQuestion'
+import LeaderBoard from './components/LeaderBoard'
 
 class App extends React.Component {
   componentDidMount() {
@@ -28,7 +29,7 @@ class App extends React.Component {
                   <Nav />
                   <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/leaderboard">Leaderboard</Route>
+                    <Route exact path="/leaderboard" component={LeaderBoard} />
                     <Route exact path="/add" component={AddQuestion} />
                     <Route exact path="/questions/:question_id" component={Question} />
                     <Route>Page not found!</Route>
