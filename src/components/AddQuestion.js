@@ -18,7 +18,7 @@ class AddQuestion extends React.Component {
             <input style={{ width: '100%' }} type='text' placeholder='Option one' value={this.state.optionOne}
               onChange={e => this.setState({ optionOne: e.target.value })} />
             <h5>Or</h5>
-            <input style={{ width: '100%' }} type='text' placeholder='Option one' value={this.state.optionTwo}
+            <input style={{ width: '100%' }} type='text' placeholder='Option two' value={this.state.optionTwo}
               onChange={e => this.setState({ optionTwo: e.target.value })} />
             <div style={{ marginTop: '20px' }}>
               <Button disabled={this.state.optionOne === '' || this.state.optionTwo === ''}

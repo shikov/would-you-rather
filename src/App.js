@@ -10,6 +10,7 @@ import './App.css'
 import Question from './components/Question'
 import AddQuestion from './components/AddQuestion'
 import LeaderBoard from './components/LeaderBoard'
+import NotFound from './components/NotFound'
 
 class App extends React.Component {
   componentDidMount() {
@@ -32,7 +33,7 @@ class App extends React.Component {
                     <Route exact path="/leaderboard" component={LeaderBoard} />
                     <Route exact path="/add" component={AddQuestion} />
                     <Route exact path="/questions/:question_id" component={Question} />
-                    <Route>Page not found!</Route>
+                    <Route component={NotFound} />
                   </Switch>
                 </BrowserRouter>
               </div>
