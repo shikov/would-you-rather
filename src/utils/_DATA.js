@@ -1,8 +1,8 @@
 let users = {
-  kaya: {
-    id: 'kaya',
-    name: 'Kaya Pryor',
-    avatarURL: "/avatars/Kaya Pryor.jpg",
+  sarahedo: {
+    id: 'sarahedo',
+    name: 'Sarah Edo',
+    avatarURL: "/avatars/Sarah Edo.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -11,20 +11,20 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  athan: {
-    id: 'athan',
-    name: 'Athan Travis',
-    avatarURL: "/avatars/Athan Travis.jpg",
+  tylermcginnis: {
+    id: 'tylermcginnis',
+    name: 'Tyler McGinnis',
+    avatarURL: "/avatars/Tyler McGinnis.jpg",
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  edith: {
-    id: 'edith',
-    name: 'Edith Koenig',
-    avatarURL: "/avatars/Edith Koenig.jpg",
+  johndoe: {
+    id: 'johndoe',
+    name: 'John Doe',
+    avatarURL: "/avatars/John Doe.jpg",
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
