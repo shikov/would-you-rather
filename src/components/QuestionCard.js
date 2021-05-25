@@ -13,7 +13,7 @@ export default function QuestionCard(props) {
           title={props.author.name + ' asks:'}
         />
         <CardContent>
-          Would you rathar <strong>{props.question.optionOne.text}</strong> or <strong>{props.question.optionTwo.text}</strong>?
+          Would you rather <strong>{props.question.optionOne.text}</strong> or <strong>{props.question.optionTwo.text}</strong>?
         </CardContent>
         <CardActions>
           <Link to={'/questions/' + props.question.id}>{props.answered && 'View '}Poll</Link>

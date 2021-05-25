@@ -21,7 +21,7 @@ class UnAnsweredQuestion extends Component {
             title={qAuthor.name + ' asks:'}
           />
           <CardContent>
-            <h2>Would you rathar..</h2>
+            <h2>Would you rather..</h2>
             <div>
               <label>
                 <input type="radio" name="vote"

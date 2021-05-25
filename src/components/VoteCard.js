@@ -5,7 +5,7 @@ export default function VoteCard(props) {
   return (
     <Card style={{ margin: '20px auto' }} elevation={5}>
       <CardContent>
-        <h5>Would you rathar {props.text}?</h5>
+        <h5>Would you rather {props.text}?</h5>
         <div style={{ display: 'table' }}>
           <Box position="relative" display="inline-flex">
             <CircularProgress color="secondary" variant="determinate" value={props.ratio} />
